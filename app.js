@@ -8,7 +8,7 @@ const bodyParser=require("body-parser")
 var flash = require('connect-flash');
 const mongoose = require('mongoose');
 const methodOverride=require('method-override')
-const morgan= require("morgan")
+//const morgan= require("morgan")
 //=============================================
 //authentication imports
 //==================================
@@ -89,7 +89,7 @@ const index=require("./routes/index.js")
 app.set("view engine","ejs")
 app.use(methodOverride('_method'))
 app.use(express.static("public"))
-app.use(morgan('tiny'))
+//app.use(morgan('tiny'))
 app.use(series_route)
 app.use(comments_route)
 app.use(auth_routes )
