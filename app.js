@@ -17,9 +17,23 @@ const passportLocal= require("passport-local")
 const expressSession= require('express-session')
 const LocalStrategy= passportLocal.Strategy
 //config imports
+try{var config= require("./config.js")}
+catch (e){
+	console.log("could not import config")
+	console.log(e)
+	
+	
+}
+try{
+	mongoose.connect(config.db.connection, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}); 
+}
+catch (e){
+	console.log("could not connect")
+    mongoose.connect(process.env.DB_CONNECTION_STRING,{useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
+	
+	
+}
 
-const config= require("./config.js")
-mongoose.connect(config.db.connection, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}); 
 
 
 
@@ -44,7 +58,7 @@ app.use(flash());
 //express-session config
 //===========================================
 app.use(expressSession({
-	 secret:"sdzcfgmlkgfdlcfgfkcdgbgffd",
+	 secret:process.env.ES_SECRET|| config.expressSession.secrethe,
 	resave:false,
 	saveUninitialized: false
 	
@@ -97,7 +111,7 @@ app.use(index)
 
 
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
 	
 	console.log("server runing")
 })
