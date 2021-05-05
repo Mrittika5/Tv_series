@@ -22,7 +22,9 @@ body{
 	
 	flex-wrap:wrap;
 	justify-content: space-around;
-	border-top:1px solid #000;
+    
+	
+	
 	padding-top:1.5rem;
 		
 }
@@ -30,13 +32,13 @@ body{
 .card{
 	width: 400px;
 	height: auto;
-	
 	border: solid darkcyan 3px;
+	
 	border-radius: 1rem;
 	margin-bottom: 30px;
 }
 .login-form{
-	width:600px;
+	width:400px;
 
 	
 }
@@ -107,5 +109,6 @@ body{
 }
 
 
-	
+
+
 

@@ -1,28 +1,35 @@
 	<%- include("partials/header")%>
 
-
-
-
-
 <h1  style="text-align:center;">
-	login
+	login <br>
 </h1>
 
+
+
 <div class="container">
+	
+
+
 	<div class="login-form">
 		<form action="/login" method="POST" class="add-form">
 	
-
+<label for="username">Username</label>
 	<input class="form-control" type="text" name="username" placeholder="username" required >
 			<br>
+			<label for="password">Password</label>
 	<input class="form-control" type="password" name="password"  placeholder=" password" required>
 			<br>
-	<button class="btn btn-outline-success" type="submit">
+	<button class="btn btn-outline-success" type="submit" style="margin-left: 170px;">
 		
 		Login
 	</button>
 			<br><br>
 </form>
+		<div >
+			<h4 style="text-align:center; ">
+				New to this website?  <a href="/login" style="text-decoration:none;">Log In</a>
+			</h4>
+		</div>
 	</div>
 
 	
