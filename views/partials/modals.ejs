@@ -1,0 +1,58 @@
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div >
+        <h5  style="text-align:center; margin-top:20px;" >Add New Series</h5>
+        
+      </div>
+      <div class="modal-body">
+	 <form action="/series" method="POST">
+     <label for="Title">Title</label>
+	<input type="text" class="form-control" name=Title autofocus placeholder="Title">
+    <br>
+	<label for="Description">Description</label>
+		 <textarea type="text" class="form-control" name=Description placeholder="Description" ></textarea>
+	<br>
+	 <label for="Creator">Creator</label>
+	<input type="text" class="form-control" name=Creator  placeholder="eg. J.K Rowling">
+    <br>
+	 <label for="Genre">Genre</label>
+	<select  select class="form-select form-select-sm"  name=Genre >
+		<option selected>Select One</option>
+		<option>Mystery</option>
+		<option>Thriller</option>
+		<option>Action</option>
+		<option>Sci-Fi</option>
+		<option>Romance</option>
+		<option>Horror</option>
+		<option>Fantacy</option>
+		<option>Comedy</option>
+	
+		</select>
+    <br>
+	<label for="Seasons"> Seasons</label>
+	<input type="text" class="form-control" name=Seasons required >
+    <br>
+	<label for="Image">Image</label>
+	<input type="text" class="form-control" name=Image placeholder="Image-link" >
+	<br>
+	
+	
+	<br>
+	
+        <button class="btn btn-outline-success" type="submit">Submit</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color:steelblue;">Close</button>
+      
+      </div>
+    </div>
+  </div>
+</div>

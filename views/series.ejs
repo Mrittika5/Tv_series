@@ -1,0 +1,42 @@
+
+	<%- include("partials/header")%>
+		<div class="container">
+         
+	  
+			
+		   <%if (series.length==0){%>
+			<h2>
+				<%=msg%>
+			</h2>
+			
+				<%}else{%>
+			
+			<%series.forEach ((item)=>{%>
+			 	<div class="card">
+				<img class="card-img" src="<%=item.Image%>"  alt="picture of series">
+				<h3 class="card-title">
+					
+				<a href="/series/<%=item._id%>"   style="color:black; "> <%=item.Title%> </a>	
+				</h3>
+				<p class="card-text">
+					<%=item.Description%>
+					 <a href="/series/<%=item._id%>" style="color:darkcyan;" >...See More</a>  
+				</p>
+			      
+				
+					
+					
+						
+				</div>
+			
+			<%})%>
+		<%}%>
+				
+			</div>
+		
+			
+		
+	<%- include("partials/footer")%>
+
+	
+	

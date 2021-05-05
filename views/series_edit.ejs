@@ -1,0 +1,38 @@
+ 	<%- include("partials/header")%>
+<form action="/series/<%=series._id%>?_method=PUT" method="POST" class="add-form">
+     <label for="Title">Title</label>
+	<input type="text" class="form-control" name=Title value="<%=series.Title %>" autofocus>
+    <br>
+	<label for="Description">Description</label>
+		 <textarea type="text" class="form-control" name=Description  ><%=series.Description %></textarea>
+	<br>
+	 <label for="Creator">Creator</label>
+	<input type="text" class="form-control" name=Creator value="<%=series.Creator %>">
+    <br>
+	 <label for="Genre">Genre</label>
+	<select  select class="form-select form-select-sm" name=Genre  value="<%=series.Genre %>" >
+		<option disabled>Select One</option>
+		<option  <%= series.Genre==='Mystery' ? 'selected' :' '  %> >Mystery</option>
+		<option <%= series.Genre==='Thriller' ? 'selected' : ' '%>>Thriller</option>
+		<option <%= series.Genre==='Action' ? 'selected' : ' '%> >Action</option>
+		<option <%= series.Genre==='Sci-fi' ? 'selected' : ' '%>  >Sci-Fi</option>
+		<option <%= series.Genre==='Romance' ? 'selected' : ' '%> >Romance</option>
+		<option <%= series.Genre==='Horror' ? 'selected' : ' '%> >Horror</option>
+		<option<%= series.Genre==='Fantacy' ? 'selected' : ' '%> >Fantacy</option>
+		<option <%= series.Genre==='Comedy' ? 'selected' : ' '%> >Comedy</option>
+	
+		</select>
+    <br>
+	<label for="Seasons"> Seasons</label>
+	<input type="text" class="form-control"value="<%=series.Seasons %>" name=Seasons >
+    <br>
+	<label for="Image">Image</label>
+	<input type="text" class="form-control" value="<%=series.Image %>"name=Image  >
+	<br>
+	
+	
+	<br>
+	
+        <button class="btn btn-outline-success" type="submit">Submit</button>
+</form>
+	<%- include("partials/footer")%>

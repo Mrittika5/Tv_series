@@ -1,0 +1,102 @@
+	<%- include("partials/header")%>
+<h1 style= "text-align:center; color: darkblue;  margin-top:10px; font-family:Lobster;">
+	<%= series.Title %>
+</h1>
+
+<div class="container">
+  <div class="pic">
+    
+    	<img class="poster" src="<%=series.Image%>"  alt="picture of series">
+	 
+	
+	
+
+	</div>
+	<div class="details">
+		<div>
+			<%if(user){%>
+			<% if(series.Owner.id.equals(user._id)){%>
+			<ul style="float:right;  ">
+ 
+   <li class="list-inline-item">
+ <a   class="modify" href="/series/<%=series._id%>/edit">  <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i> </button></a> 
+  </li>
+  <li class="list-inline-item">
+	  <form action="/series/<%=series._id%>?_method=DELETE" method="POST">
+		 
+		    <button class="btn btn-danger btn-sm rounded-0" type="submit" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+	  </form>
+
+                                                </li>
+                                            </ul><%}}%>
+	  
+		</div>
+		<div style=" margin-top:40px; " >
+			<div>
+			  <%=series.Description%><br>   
+		</div>
+		<div>
+				     <b> Creator: </b> <%=series.Creator%><br>
+		</div>
+	       
+	     <div>
+			<b> Genre:</b> <%=series.Genre%><br>
+		</div>  
+	       <div>
+			 <b>No of Seasons:</b> <%= series.Seasons %><br>  
+		</div>
+		</div>
+		
+		   
+	   
+	</div>
+    
+ 
+    
+  </div>
+
+
+    <div >
+		<h2>
+			 Comments
+		</h2>
+		<div>
+			  <%for(let i=0;i<comment.length;i++){%>
+			 <div class="comment"> 
+				 
+				  <h4 style="color:black float:left"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="" class="rounded-circle" width="40" height="40">  <%=comment[i].user%> </h4>
+                    
+                    <p style="color:grey"><%=comment[i].text%></p>
+                </div>
+			<%}%>
+		</div>
+		
+		<div style="width:30%; margin-left:10px; margin-bottom:20px">
+			<h2>
+			Leave a Commnet
+		</h2>
+		<%if(user){%>
+		<form action="/series/:id"method="POST" >
+         
+
+			<label for="text"></label>
+		 <textarea type="text" class="form-control" name="text" placeholder="Commnet-text" ></textarea>
+	    <input type="hidden"  name="user"  value="<%=series.Owner.username%>">
+			<input type="hidden"  name="seriesId" value="<%=series._id%>" ><br>
+			<button class="btn btn-outline-success" type="submit">Submit</button>
+</form>
+		<%} else{%>
+				You need to login first to comment.
+		  <br>
+		  <div >
+			  <a class="login-first" href="/signup">Sign Up</a> Or <a class="login-first" href="/login">Log In</a> 
+		  </div>
+			 	
+			<%}%>
+	</div>
+</div>    
+
+
+
+
+	<%- include("partials/footer")%>
