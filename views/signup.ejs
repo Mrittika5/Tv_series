@@ -21,8 +21,11 @@
 				<br>
 					<label for="password">Password</label>
 				
-	<input class="form-control" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="Password must  contain at least one number and one lowercase letter, and at least 8 or more characters"
+	<input class="form-control" type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="Password must  contain at least one number and one lowercase letter, and at least 8 or more characters"
 		   placeholder=" password" required><br>
+					<label for="confirm_password"> Confirm Password</label>
+				
+				 <input type="password"  class="form-control"placeholder="Confirm Password" id="confirm_password" required><br>
 	<button class="btn btn-outline-success" type="submit" style="margin-left: 170px; ">
 		Sign Up
 	</button>
@@ -40,7 +43,9 @@
 
 
 
+ <script src="/confirm_pass.js ">
 
+     </script>
 
 
 
