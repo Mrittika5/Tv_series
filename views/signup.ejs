@@ -17,11 +17,12 @@
 	<input class="form-control" type="text" name="username" placeholder="username" required ><br>
 					<label for="email">Email address</label>
 	
-	<input class="form-control"  type="email" name="email" placeholder="john@gmail.com" required >
+	<input class="form-control"  type="email" name="email"  title="please eneter a correct email address" placeholder="john@gmail.com" required >
 				<br>
 					<label for="password">Password</label>
 				
-	<input class="form-control" type="password" name="password"  placeholder=" password" required><br>
+	<input class="form-control" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="Password must  contain at least one number and one lowercase letter, and at least 8 or more characters"
+		   placeholder=" password" required><br>
 	<button class="btn btn-outline-success" type="submit" style="margin-left: 170px; ">
 		Sign Up
 	</button>

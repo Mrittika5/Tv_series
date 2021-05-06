@@ -2,17 +2,7 @@ const express= require("express")
 const router= express.Router()
 const Comments= require("../models/comments.js")
 const Series= require ('../models/series.js')
-function isLoggedIn(req,res,next){
-	if(req.isAuthenticated()){
-		
-		return next()
-	}
-	else{
-		res.redirect("/login")
-		
-	}
-	
-}
+const isLoggedIn=require('../utils/isloggedin.js')
 router.get("/series/search", async(req,res)=>{
  try{
 	 
@@ -54,15 +44,17 @@ router.get("/series/:id" ,(req,res)=>{
 			
 		})
 		.catch((err)=>{
-		
-		res.send(err)
+		req.flash("error", "No Series Found ")
+		res.redirect("/series")
+	
 	})
 	
 		
 	})
 	.catch((err)=>{
-		
-		res.send(err)
+		req.flash("error", "No Series Found ")
+		res.redirect("/series")
+	
 	})
 	
 
@@ -138,6 +130,7 @@ router.put("/series/:id",(req,res)=>{
 	Series.findByIdAndUpdate(req.params.id,UpdatedSeries,{new:true})
 	.exec()
 	.then((data)=>{
+		req.flash("success", " Series Updated Successfully      ")	
 		res.redirect(`/series/${req.params.id}`)
 		
 		
@@ -157,7 +150,7 @@ router.delete("/series/:id",(req,res)=>{
 	Series.findByIdAndDelete(req.params.id)
 	.exec()
 	.then((data)=>{
-		
+		req.flash("success", "Series Deleted")	
 		res.redirect("/series")
 		
 		

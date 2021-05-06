@@ -1,3 +1,22 @@
+.hometitle{
+	position:relative;
+	text-align:center; 
+	color:darkblue; 
+	font-family: 'Lobster', cursive;
+	font-size: 60px;
+	margin-bottom:10px;
+}
+
+.hometext{
+	position:relative;
+	text-align:center; 
+	color:blue; 
+	font-family: 'I', cursive;
+	font-size: 30px;
+	margin-bottom:10px;
+	
+}
+
 body{
 	margin:0;
 	
@@ -8,7 +27,20 @@ body{
 	text-decoration: none;
 
 }
+.close{
+background-color:inherit ;
+border:none;
+}
+.alert{
+	text-align:center;
+	width: 350px;
+	height:60px;
 
+	
+	margin: 0 auto;
+	margin-top :10px;
+}
+.close
 .comment {
 	
 	width:50%;
