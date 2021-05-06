@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 
 const seriesSchema=new mongoose.Schema( {
-	Title: String,
+	Title: {type:String,required:true,unique:true},
 	Description: String,
 	Creator: String,
 	Genre: String,
-	Seasons: Number,
+	Seasons: String,
 	Image :String,
 	Owner:{
 		id: {

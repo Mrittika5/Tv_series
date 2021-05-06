@@ -14,16 +14,16 @@
       <div class="modal-body">
 	 <form action="/series" method="POST">
      <label for="Title">Title</label>
-	<input type="text" class="form-control" name=Title autofocus placeholder="Title">
+	<input type="text" class="form-control" name=Title autofocus placeholder="Title" required>
     <br>
 	<label for="Description">Description</label>
-		 <textarea type="text" class="form-control" name=Description placeholder="Description" ></textarea>
+		 <textarea type="text" class="form-control" name=Description placeholder="Description" required ></textarea>
 	<br>
 	 <label for="Creator">Creator</label>
 	<input type="text" class="form-control" name=Creator  placeholder="eg. J.K Rowling">
     <br>
 	 <label for="Genre">Genre</label>
-	<select  select class="form-select form-select-sm"  name=Genre >
+	<select  select class="form-select form-select-sm"  name=Genre required>
 		<option selected>Select One</option>
 		<option>Mystery</option>
 		<option>Thriller</option>
@@ -38,10 +38,10 @@
 		</select>
     <br>
 	<label for="Seasons"> Seasons</label>
-	<input type="text" class="form-control" name=Seasons required >
+	<input type="text" class="form-control" name=Seasons  >
     <br>
 	<label for="Image">Image</label>
-	<input type="text" class="form-control" name=Image placeholder="Image-link" >
+	<input type="text" class="form-control" name=Image placeholder="Image-link" required>
 	<br>
 	
 	
