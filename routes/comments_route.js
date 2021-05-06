@@ -65,7 +65,7 @@ router.get("/series/:id" ,(req,res)=>{
 		res.send(err)
 	})
 	
-		
+
 })
 router.post("/series/:id" ,(req,res)=>{
 	const x=req.body.seriesId

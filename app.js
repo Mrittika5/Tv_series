@@ -58,7 +58,7 @@ app.use(flash());
 //express-session config
 //===========================================
 app.use(expressSession({
-	 secret:process.env.ES_SECRET|| config.expressSession.secrethe,
+	 secret:process.env.ES_SECRET|| config.expressSession.secret,
 	resave:false,
 	saveUninitialized: false
 	

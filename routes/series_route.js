@@ -91,12 +91,31 @@ router.get("/series/:uid/series",(req,res)=>{
 	})
 	
 	
-	
+	.catch((err)=>{
+		console.log(err)
+		res.send(err)
+		
+	})
 	
 	
 })
 
-
+router.get("/genre/:genre", (req,res)=>{
+	  const msg="Sorry, no series found"
+	 Series.find({Genre:req.params.genre})
+	.exec()
+	.then((data)=>{
+		 
+		 res.render("series.ejs", {series:data,msg})
+	 })
+	
+	.catch((err)=>{
+		console.log(err)
+		res.send(err)
+		
+	})
+	
+})
 
 
 

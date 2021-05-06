@@ -31,8 +31,8 @@
                                             </ul><%}}%>
 	  
 		</div>
-		<div style=" margin-top:40px; " >
-			<div>
+		<div style=" margin-top:50px; " >
+			<div style=" text-align: justify; text-justify: inter-word;">
 			  <%=series.Description%><br>   
 		</div>
 		<div>
@@ -81,7 +81,7 @@
 
 			<label for="text"></label>
 		 <textarea type="text" class="form-control" name="text" placeholder="Commnet-text" ></textarea>
-	    <input type="hidden"  name="user"  value="<%=series.Owner.username%>">
+	    <input type="hidden"  name="user"  value="<%=user.username%>">
 			<input type="hidden"  name="seriesId" value="<%=series._id%>" ><br>
 			<button class="btn btn-outline-success" type="submit">Submit</button>
 </form>
