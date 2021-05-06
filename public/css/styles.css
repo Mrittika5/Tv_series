@@ -8,7 +8,20 @@ body{
 	text-decoration: none;
 
 }
+.close{
+background-color:inherit ;
+border:none;
+}
+.alert{
+	text-align:center;
+	width: 350px;
+	height:60px;
 
+	
+	margin: 0 auto;
+	margin-top :10px;
+}
+.close
 .comment {
 	
 	width:50%;

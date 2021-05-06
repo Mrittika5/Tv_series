@@ -5,7 +5,7 @@ const express = require("express")
 const app = express()
 const fetch = require("node-fetch")
 const bodyParser=require("body-parser")
-var flash = require('connect-flash');
+const flash = require('connect-flash');
 const mongoose = require('mongoose');
 const methodOverride=require('method-override')
 //const morgan= require("morgan")
@@ -51,7 +51,7 @@ const User= require("./models/user.js")
 //use block
 //===========================================
 app.use(bodyParser.urlencoded({extended:true}))
-app.use(flash());
+
 
 
 //======================================
@@ -63,6 +63,11 @@ app.use(expressSession({
 	saveUninitialized: false
 	
 }))
+
+//connect flash
+app.use(flash())
+
+
 //======================
 //passport config
 //==================
@@ -81,6 +86,8 @@ passport.use(new LocalStrategy(User.authenticate()))
 app.use((req,res,next)=>{
 
 res.locals.user=req.user;
+res.locals.errMessage=req.flash("error")
+res.locals.successMessage=req.flash("success")
 next();
 })
 

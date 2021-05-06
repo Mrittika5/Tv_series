@@ -2,7 +2,7 @@ const express= require("express")
 const router= express.Router()
 const Series= require ('../models/series.js')
 const Comments= require("../models/comments.js")
-
+const isLoggedIn=require('../utils/isloggedin.js')
 router.get("/series",(req,res)=>{
 	Series.find()
     .exec()
@@ -40,7 +40,7 @@ router.post("/series",(req,res)=>{
 .then((ser)=>{
 
    
-	
+req.flash("success", "New Series Created")	
 res.redirect("/series")
 		})
 .catch((err)=>{
